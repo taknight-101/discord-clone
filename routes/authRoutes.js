@@ -11,8 +11,6 @@ const registerSchema = Joi.object({
   mail: Joi.string().email().required(),
 });
 
-
-// any other extra field passed from client side won't be allowed >> errors out
 const loginSchema = Joi.object({
   password: Joi.string().min(6).max(12).required(),
   mail: Joi.string().email().required(),

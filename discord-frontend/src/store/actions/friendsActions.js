@@ -51,15 +51,12 @@ const sendFriendInvitation = (data, closeDialogHandler) => {
 };
 
 const acceptFriendInvitation = (data) => {
- 
   return async (dispatch) => {
     const response = await api.acceptFriendInvitation(data);
-    console.log(response)
 
     if (response.error) {
       dispatch(openAlertMessage(response.exception?.response?.data));
     } else {
-   
       dispatch(openAlertMessage("Invitation accepted!"));
     }
   };
